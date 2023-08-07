@@ -90,11 +90,10 @@
     <div class="progress-bar-container">
       <div class="progress-bar"></div>
     </div>
-    
+
     <div id="content">
       <!-- Content will be dynamically loaded here -->
     </div>
-
 
 
     <script>
@@ -104,18 +103,26 @@
           .then(data => {
             const contentContainer = document.getElementById('content');
             let contentHTML = '';
-
+  
+            contentHTML += '<label class="topic" for="topic-select">Select a Topic: &nbsp</label>';
+            contentHTML += '<select id="topic-select">';
+  
             data.data.forEach(item => {
+              contentHTML += `<option value="${item.title}">${item.title}</option>`;
+            });
+  
+            contentHTML += '</select>';
+            contentHTML += `<button id="toggle-questions-btn">Hide Questions</button>`;
+            contentHTML += '<div id="questions-container">';
+            data.data.forEach(item => {
+              contentHTML += `<div class="question-container hidden" data-topic="${item.title}">`;
               contentHTML += `<h2 class="t_head">&#9733 &nbsp${item.title}</h2>`;
-
-              contentHTML += `<button class="toggle-questions-btn" data-topic="${item.title}">Hide Questions</button>`;
-
               item.ques.forEach((ques, index) => {
                 contentHTML += `<div class="question">`;
+                
+                contentHTML += `<span class="dot">${index + 1}</span>`;
                 contentHTML += `<h3 class="q_title">${ques.title}</h3>`;
-
-
-
+  
                 if (ques.yt_link) {
                   contentHTML += '&nbsp<i class="fa fa-youtube-play" style="font-size:24px;color:red"></i> &nbsp' + `<a class="yt_link" href="${ques.yt_link}" target="_blank">Watch on YouTube</a><br>`;
                 }
@@ -125,45 +132,73 @@
                 if (ques.p2_link) {
                   contentHTML += '&nbsp<i class="fa fa-book" style="font-size:24px;color:white"></i> &nbsp' + `<a class="q_link" href="${ques.p2_link}" target="_blank">Problem 2</a><br>`;
                 }
-
-                contentHTML += ` &nbsp<input type="checkbox" id="checkbox${index}" class="bg-color-checkbox">`;
-                contentHTML += `<label class="check_text" for="checkbox${index}"> &nbspMark as done</label>`;
+  
+                
+                const savedValue = localStorage.getItem(`checkbox_${item.title}_${index}`);
+                const isChecked = savedValue === 'true';
+                contentHTML += ` &nbsp<input type="checkbox" id="checkbox${item.title}${index}" class="bg-color-checkbox" data-topic="${item.title}" data-index="${index}" ${isChecked ? 'checked' : ''}>`;
+                contentHTML += `<label class="check_text" for="checkbox${item.title}${index}"> &nbspMark as done</label>`;
                 contentHTML += `</div>`;
               });
-
-              contentHTML += `<hr>`;
+              contentHTML += `</div>`;
             });
-
+  
+            contentHTML += '</div>';
+            contentContainer.innerHTML = contentHTML;
+  
             
-
-            const toggleButtons = document.querySelectorAll('.toggle-questions-btn');
-            toggleButtons.forEach(button => {
-              button.addEventListener('click', function () {
-                const topic = this.getAttribute('data-topic');
-                const topicQuestions = document.querySelectorAll(`.${topic}-questions`);
-                topicQuestions.forEach(question => {
-                  question.classList.toggle('hidden');
-                });
-
-                // Update the button text based on the current state
-                const buttonText = this.innerText;
-                this.innerText = buttonText === 'Hide Questions' ? 'Show Questions' : 'Hide Questions';
+            const topicSelect = document.getElementById('topic-select');
+            topicSelect.addEventListener('change', function () {
+              const selectedTopic = this.value;
+              const allContainers = document.querySelectorAll('.question-container');
+              allContainers.forEach(container => {
+                const topic = container.getAttribute('data-topic');
+                if (topic === selectedTopic) {
+                  container.classList.remove('hidden');
+                } else {
+                  container.classList.add('hidden');
+                }
               });
             });
-
-            contentContainer.innerHTML = contentHTML;
+  
+            
+            const toggleButton = document.getElementById('toggle-questions-btn');
+            toggleButton.addEventListener('click', function () {
+              const containers = document.querySelectorAll('.question-container:not(.hidden) .question');
+              containers.forEach(question => {
+                question.classList.toggle('hidden');
+              });
+  
+            
+              const buttonText = this.innerText;
+              this.innerText = buttonText === 'Hide Questions' ? 'Show Questions' : 'Hide Questions';
+            });
+  
+            
             const checkboxes = document.querySelectorAll('.bg-color-checkbox');
-            checkboxes.forEach((checkbox, index) => {
+            checkboxes.forEach((checkbox) => {
               checkbox.addEventListener('change', function () {
                 const questionDiv = this.parentElement;
                 questionDiv.style.backgroundColor = this.checked ? 'green' : 'initial';
+  
+                
+                const topic = this.getAttribute('data-topic');
+                const checkboxIndex = this.getAttribute('data-index');
+                const isChecked = this.checked;
+                localStorage.setItem(`checkbox_${topic}_${checkboxIndex}`, isChecked);
               });
+  
+
+              const questionDiv = checkbox.parentElement;
+              if (checkbox.checked) {
+                questionDiv.style.backgroundColor = 'green';
+              }
             });
           })
           .catch(error => console.error('Error fetching data:', error));
       });
     </script>
-
+  
   </section>
 
 
@@ -198,10 +233,10 @@
     </div>
 
     <div class="social">
-      <a href="#"><i class='bx bxl-instagram-alt'></i></a>
-      <a href="#"><i class='bx bxl-linkedin'></i></a>
-      <a href="#"><i class='bx bxl-twitter'></i></a>
-      <a href="#"><i class='bx bxl-github'></i></a>
+      <a href="https://www.instagram.com/a_nkit_k/" target="_blank"><i class='bx bxl-instagram-alt'></i></a>
+      <a href="https://www.instagram.com/a_nkit_k/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+      <a href="https://twitter.com/login?lang=en" target="_blank"><i class='bx bxl-twitter'></i></a>
+      <a href="https://github.com/blackhat-coder21" target="_blank"><i class='bx bxl-github'></i></a>
     </div>
 
     <div class="footer-iconTop">
@@ -212,9 +247,6 @@
   <script src="https://unpkg.com/scrollreveal"></script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="script.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
