@@ -1,0 +1,476 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+}
+
+header{
+    position: relative; 
+    top: 0;
+    left: 0;
+    width: 1005;
+    height: 80px;
+}
+
+
+body{
+    background-color: #323946;
+}
+.intro{
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    transition: 2s;
+}
+
+.logo-header{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.logo{
+    position: relative;
+    display: inline-block;
+    font-size: 4rem;
+    bottom: -20px;
+    opacity: 0;
+}
+
+.logo.active{
+    bottom: 0;
+    opacity: 1;
+    transition: ease-in-out 0.5s;
+}
+
+.logo.fade{
+    bottom: 150px;
+    opacity: 0;
+    transition: ease-in-out 0.5s;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6s;
+    z-index: 100;
+}
+
+
+.logo1{
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 600;
+    cursor: default;
+    flex: 1; 
+    margin-left: 5px;
+    background: black;
+    text-decoration: none;
+}
+
+.navbar{
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+}
+
+.navbar a {
+    font-size: 1.2rem;
+    color: white;
+    font-style: bold;
+    margin-left: 1.5rem;
+    transition: .6s;
+    text-decoration: none;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: green;
+}
+
+i{
+    color: white;
+    cursor: pointer;
+}
+
+#int{
+    color: green;
+    transition: .6s;
+    cursor: pointer;
+}
+
+header .search-box{
+    flex: 1;
+    position: relative;
+}
+
+.search-box input{
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    background: #f2f2f2;
+    border-radius: 30px;
+    color: grey;
+    font-size: 14px;
+    padding-left: 16px;
+    text-align: center;
+}
+
+.search-box button{
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    position: absolute;
+    top: 0;
+    right: 1px;
+    transform: scale(0.9);
+    background: green;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8rem;
+    background: #1f242d;
+}
+
+.services{
+    background: #1f242d;
+}
+
+.home-content h3{
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 4rem;
+    margin-left: 5rem;
+}
+
+.home-content h2{
+    margin-left: 5rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1;
+    color: white;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+
+span{
+    color: #0ef;
+}
+
+.home-img img{
+    width: 30vw;
+    animation: floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-2.8rem);
+    }
+    1000%{
+        transform: translateY(0);
+    }
+}
+
+.home-content h1{
+    font-size: 3.6rem;
+    margin-left: 5rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-top: 2rem;
+    color: #0ef;
+    margin-bottom: 3rem;
+}
+
+
+.home-content p{
+    color: white;
+    font-size: 1.05rem;
+    margin-left: 5rem;
+}
+
+
+.footer-text span{
+    color: rgb(224, 240, 85);
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: black;
+}
+
+.footer-text p{
+    color: white;
+    font-size: 1rem;
+}
+
+.footer-iconTop a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .3rem;
+    background: #0ef;
+    text-decoration: none;
+    border-radius: .5rem;
+    transition: .5s ease;
+}
+
+.footer-iconTop a:hover{
+    box-shadow: 0 0 3rem #0ef;
+}
+.footer-iconTop a i{
+    font-size: 1.7rem;
+    color: black;
+}
+
+.social a {
+    display: inline-flex;
+    justify-content:center;
+    align-items: center;
+    width: 1rem;
+    height: 1rem;
+    text-decoration: none;
+    background: transparent;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    padding: 1rem;
+    color: #0ef;
+    transition: .5s ease;
+}
+
+.social a:hover{
+    box-shadow: 0 0 2rem #0ef;
+}
+
+.heading{
+    color: white;
+    text-align: center;
+    font-weight: 800;
+    font-size: 2.8rem;
+}
+
+.about-img img{
+    width: 30vw;
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+
+.about-content h2{
+    text-align: left;
+    color: white;
+    font-size: 3.2rem;
+    line-height: 1.2;
+    margin-left: 8rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.about-content h3{
+    font-size: 1.6rem;
+    color: white;
+}
+
+.about-content h1{
+    font-size: 2.9rem;
+    color: yellow;
+}
+
+.about-content p{
+    font-size: 1.05rem;
+    color: white;
+    margin: 2rem 0 3rem;
+}
+
+.btn{
+    display: inline-block;
+    padding: 0.5rem 2.1rem;
+    background: #0ef;
+    border-radius: 2rem;
+    font-size: 1rem;
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition: .5s ease;
+    margin-bottom: 5rem;
+    text-decoration: none;
+}
+
+.btn:hover{
+    box-shadow: 0 0 1rem #0ef;
+}
+
+.about-img img{
+    width: 30vw;
+    animation: floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-2.8rem);
+    }
+    1000%{
+        transform: translateY(0);
+    }
+}
+
+/* .about-content h3 span{
+    color: rgb(224, 240, 85);
+} */
+
+.contact{
+    background: #1f242d;
+}
+
+.contact h2{
+    margin-bottom: 5rem;
+    font-size: 2.8rem;
+}
+
+.contact form{
+    max-width: 45rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact form .input-box{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box input,
+.contact form textarea {
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1rem;
+    color: #fff;
+    background: #323946;
+    border-radius: .8rem;
+    margin: .5rem 0;
+}
+
+.contact form .input-box input{
+    width: 49%;
+}
+
+.contact form textarea{
+    resize: none;
+}
+
+.contact form .btn{
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.question{
+    color: #FBA100;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 1rem;
+    margin-left: 5rem;
+}
+
+.yt_link{
+    color: white;
+    text-decoration: none;
+}
+
+.yt_link:hover, .yt_link:visited{
+    text-decoration: underline;
+    color: yellow;
+}
+
+.q_link{
+    color: white;
+    text-decoration: none;
+}
+
+.q_link:hover, .q_link:visited{
+    text-decoration: underline;
+    color: yellow;
+}
+.t_head{
+    margin-top: 5rem;
+    margin-left: 5rem;
+    margin-bottom: 4rem;
+    color: #0ef;
+    font-size: 2rem;
+}
+
+.q_title{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.bg-color-checkbox{
+    margin-top: 2rem;
+}
+
+.check_text{
+    color: #0ef;
+}
+
+.hidden {
+    display: none;
+}
+
+.dot {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 0.5em;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 20px;
+    background-color: #f1f1f1;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    background-color: green;
+  }
+  

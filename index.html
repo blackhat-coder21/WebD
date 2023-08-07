@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebD Task</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+  <header class="header">
+    <a href="#" class="logo1"><i class="fas fa-user-tie" id="int"></i> InterView_Prep</a>
+
+
+    <div class="search-box">
+      <form action="">
+        <input type="text" name="search" id="srch" placeholder="Search">
+        <button type="submit">
+          <i class="fa fa-search"></i>
+        </button>
+      </form>
+    </div>
+
+    <nav class="navbar">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Practise</a>
+      <a href="https://blackhat-coder21.github.io/portfolio/#home" target="_blank">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+
+  <section class="home" id="home">
+
+    <div class="home-content">
+      <h3>Hello,<br>
+        WelCome to,</h3>
+      <h1>InterView&nbsp Prep</h1>
+
+      <p>
+        Welcome to our comprehensive interview preparation website! Our platform is dedicated
+        to helping job seekers and aspiring professionals succeed in their interviews and land
+        their dream jobs. We understand that interviews can be nerve-wracking and challenging,
+        which is why we have designed this website to provide you with all the resources and
+        support you need to excel in any interview setting.
+      </p>
+      <h2>Our key features includes: <span class="multiple-text"></span></h2>
+      <p>
+        At our interview preparation website, we are committed to empowering you with the
+        knowledge and skills needed to stand out in interviews and secure your desired position.
+        Whether you are a recent graduate, a career changer, or an experienced professional,
+        we are here to help you take the next step in your career journey. Let's work together
+        to make your interview a resounding success!
+      </p>
+    </div>
+    <div class="home-img">
+      <img src="coder.png">
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-img">
+      <img src="pic.png" alt="">
+    </div>
+
+    <div class="about-content">
+      <h2 class="heading">About <span>Me</span></h2>
+      <h3>Hello, It's Me</h3>
+      <h1>Ankit Kumar</h1>
+      <h3>And I'm a <span class="multiple-text1"></span></h3>
+      <p>Experienced Full Stack Developer proficient in front-end and back-end web development.
+        Skilled in HTML, CSS, JavaScript, React, Node.js, and database management. Strong problem-solving
+        and collaboration abilities. Passionate about delivering high-quality, scalable web applications.
+      </p>
+      <a href="https://blackhat-coder21.github.io/portfolio/#home" target="_blank" class="btn">Download CV</a>
+
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <h2 class="heading">Practise <span>Problems</span></h2>
+
+
+    <div class="progress-bar-container">
+      <div class="progress-bar"></div>
+    </div>
+    
+    <div id="content">
+      <!-- Content will be dynamically loaded here -->
+    </div>
+
+
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        fetch('data.json')
+          .then(response => response.json())
+          .then(data => {
+            const contentContainer = document.getElementById('content');
+            let contentHTML = '';
+
+            data.data.forEach(item => {
+              contentHTML += `<h2 class="t_head">&#9733 &nbsp${item.title}</h2>`;
+
+              contentHTML += `<button class="toggle-questions-btn" data-topic="${item.title}">Hide Questions</button>`;
+
+              item.ques.forEach((ques, index) => {
+                contentHTML += `<div class="question">`;
+                contentHTML += `<h3 class="q_title">${ques.title}</h3>`;
+
+
+
+                if (ques.yt_link) {
+                  contentHTML += '&nbsp<i class="fa fa-youtube-play" style="font-size:24px;color:red"></i> &nbsp' + `<a class="yt_link" href="${ques.yt_link}" target="_blank">Watch on YouTube</a><br>`;
+                }
+                if (ques.p1_link) {
+                  contentHTML += '&nbsp<i class="fa fa-book" style="font-size:24px;color:white"></i> &nbsp' + `<a class="q_link" href="${ques.p1_link}" target="_blank">Problem 1</a><br>`;
+                }
+                if (ques.p2_link) {
+                  contentHTML += '&nbsp<i class="fa fa-book" style="font-size:24px;color:white"></i> &nbsp' + `<a class="q_link" href="${ques.p2_link}" target="_blank">Problem 2</a><br>`;
+                }
+
+                contentHTML += ` &nbsp<input type="checkbox" id="checkbox${index}" class="bg-color-checkbox">`;
+                contentHTML += `<label class="check_text" for="checkbox${index}"> &nbspMark as done</label>`;
+                contentHTML += `</div>`;
+              });
+
+              contentHTML += `<hr>`;
+            });
+
+            
+
+            const toggleButtons = document.querySelectorAll('.toggle-questions-btn');
+            toggleButtons.forEach(button => {
+              button.addEventListener('click', function () {
+                const topic = this.getAttribute('data-topic');
+                const topicQuestions = document.querySelectorAll(`.${topic}-questions`);
+                topicQuestions.forEach(question => {
+                  question.classList.toggle('hidden');
+                });
+
+                // Update the button text based on the current state
+                const buttonText = this.innerText;
+                this.innerText = buttonText === 'Hide Questions' ? 'Show Questions' : 'Hide Questions';
+              });
+            });
+
+            contentContainer.innerHTML = contentHTML;
+            const checkboxes = document.querySelectorAll('.bg-color-checkbox');
+            checkboxes.forEach((checkbox, index) => {
+              checkbox.addEventListener('change', function () {
+                const questionDiv = this.parentElement;
+                questionDiv.style.backgroundColor = this.checked ? 'green' : 'initial';
+              });
+            });
+          })
+          .catch(error => console.error('Error fetching data:', error));
+      });
+    </script>
+
+  </section>
+
+
+  <section class="contact" id="contact">
+    <h2 class="heading">Contact <span>Us!</span></h2>
+
+    <form action="#">
+      <div class="input-box">
+        <input type="text" placeholder="Full Name">
+        <input type="email" placeholder="Email Address">
+      </div>
+      <div class="input-box">
+        <input type="number" placeholder="Mobile Number">
+        <input type="text" placeholder="Email Subject">
+      </div>
+      <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+      <input type="submit" value="Send Message" class="btn">
+    </form>
+  </section>
+
+
+  <div class="intro">
+    <h1 class="logo-header">
+      <span class="logo">Wel</span><span class="logo">Come</span>
+    </h1>
+  </div>
+
+
+  <footer class="footer">
+    <div class="footer-text">
+      <p>Copyright &copy; 2023 by <span>Ankit Kumar</span> | All Rights Reserved.</p>
+    </div>
+
+    <div class="social">
+      <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+      <a href="#"><i class='bx bxl-linkedin'></i></a>
+      <a href="#"><i class='bx bxl-twitter'></i></a>
+      <a href="#"><i class='bx bxl-github'></i></a>
+    </div>
+
+    <div class="footer-iconTop">
+      <a href="#home"><i class='bx bxs-up-arrow-alt'></i></a>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

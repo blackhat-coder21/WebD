@@ -1,0 +1,235 @@
+{
+    "status": true,
+    "data": [
+        {
+            "sl_no": 1,
+            "title": "Learn the basics",
+            "ques": [
+                {
+                    "id": "srinpttpt",
+                    "tags": "Microsoft,Google,Netflix,Meta,Amazon",
+                    "title": "User Input / Output",
+                    "yt_link": "https://youtu.be/EAR7De6Goz4?t=250",
+                    "p1_link": "https://www.codingninjas.com/studio/problems/find-character-case_58513?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf",
+                    "p2_link": null
+                },
+                {
+                    "id": "dttyps",
+                    "tags": "",
+                    "title": "Data Types",
+                    "yt_link": "https://youtu.be/EAR7De6Goz4?t=755",
+                    "p1_link": "https://www.codingninjas.com/studio/problems/data-type_8357232?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf",
+                    "p2_link": null
+                },
+                {
+                    "id": "iflssttmnts",
+                    "tags": "",
+                    "title": "If Else statements",
+                    "yt_link": "https://youtu.be/EAR7De6Goz4?t=1259",
+                    "p1_link": "https://www.codingninjas.com/studio/problems/if-else-decision-making_8357235?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf",
+                    "p2_link": null
+                },
+                {
+                    "id": "switchsttmnt",
+                    "tags": "",
+                    "title": "Switch Statement",
+                    "yt_link": "https://youtu.be/EAR7De6Goz4",
+                    "p1_link": "https://www.codingninjas.com/studio/problems/switch-case-statement_8357244?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf",
+                    "p2_link": null
+                },
+                {
+                    "id": "whtrrrysstrings",
+                    "tags": "",
+                    "title": "What are arrays, strings?",
+                    "yt_link": "https://youtu.be/EAR7De6Goz4?t=2415",
+                    "p1_link": null,
+                    "p2_link": null
+                }
+            ]
+        },
+        {
+            "sl_no": 2,
+            "title": "Learn LinkedList [Single LL, Double LL, Medium, Hard Problems]",
+            "ques": [
+                {
+                    "id": "intrdctintlinkdlistlrnbtstrctndhwisndrprsntd",
+                    "tags": "",
+                    "title": "Introduction to LinkedList, learn about struct, and how is node represented",
+                    "yt_link": null,
+                    "p1_link": "https://www.codingninjas.com/studio/problems/introduction-to-linked-list_8144737?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf",
+                    "p2_link": null
+                },
+                {
+                    "id": "insrtingndinlinkdlist",
+                    "tags": "",
+                    "title": "Inserting a node in LinkedList",
+                    "yt_link": null,
+                    "p1_link": "https://www.codingninjas.com/studio/problems/insert-node-at-the-beginning_8144739?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf",
+                    "p2_link": null
+                },
+                {
+                    "id": "dltingndinlinkdlist",
+                    "tags": "",
+                    "title": "Deleting a node in LinkedList",
+                    "yt_link": null,
+                    "p1_link": "https://www.codingninjas.com/studio/problems/delete-node-of-linked-list_8160463?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf",
+                    "p2_link": "https://leetcode.com/problems/delete-node-in-a-linked-list/"
+                },
+                {
+                    "id": "findthlngthfthlinkdlistlrntrvrsl",
+                    "tags": "",
+                    "title": "Find the length of the linkedlist [learn traversal]",
+                    "yt_link": null,
+                    "p1_link": "https://www.codingninjas.com/studio/problems/count-nodes-of-linked-list_5884?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf",
+                    "p2_link": null
+                },
+                {
+                    "id": "srchnlmntinthll",
+                    "tags": "",
+                    "title": "Search an element in the LL",
+                    "yt_link": null,
+                    "p1_link": "https://www.codingninjas.com/studio/problems/search-in-a-linked-list_975381?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf",
+                    "p2_link": null
+                }
+            ]
+        },
+        {
+            "sl_no": 3,
+            "title": "Recursion [PatternWise]",
+            "ques": [
+                {
+                    "id": "rcrsivimplmnttinfti",
+                    "tags": "",
+                    "title": "Recursive Implementation of atoi()",
+                    "yt_link": null,
+                    "p1_link": "https://www.codingninjas.com/studio/problems/implement-atoi-function_981270?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf",
+                    "p2_link": "https://leetcode.com/problems/string-to-integer-atoi/"
+                },
+                {
+                    "id": "pwxn",
+                    "tags": "Netflix,Facebook,Samsung,Amazon,Oracle,Google,CRED,Meesho,Swiggy,Dream11,InMobi,Oyo,PayTM",
+                    "title": "Pow(x, n)",
+                    "yt_link": "https://youtu.be/l0YC3876qxg",
+                    "p1_link": "https://www.codingninjas.com/studio/problems/find-x-raised-to-power-n-_626560?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf",
+                    "p2_link": "https://leetcode.com/problems/powx-n/"
+                },
+                {
+                    "id": "cntgdnmbrs",
+                    "tags": "",
+                    "title": "Count Good numbers",
+                    "yt_link": null,
+                    "p1_link": "https://www.codingninjas.com/studio/problems/good-numbers_625508?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf",
+                    "p2_link": "https://leetcode.com/problems/count-good-numbers/"
+                },
+                {
+                    "id": "srtstcksingrcrsin",
+                    "tags": "",
+                    "title": "Sort a stack using recursion",
+                    "yt_link": null,
+                    "p1_link": "https://www.codingninjas.com/codestudio/problems/sort-stack_1229505?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf",
+                    "p2_link": null
+                },
+                {
+                    "id": "rvrsstcksingrcrsin",
+                    "tags": "",
+                    "title": "Reverse a stack using recursion",
+                    "yt_link": null,
+                    "p1_link": "https://www.codingninjas.com/studio/problems/reverse-stack-using-recursion_631875?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf",
+                    "p2_link": null
+                }
+            ]
+        },
+        {
+            "sl_no": 4,
+            "title": "Bit Manipulation [Concepts & Problems]",
+            "ques": [
+                {
+                    "id": "intrdctintbitmnipltinthry",
+                    "tags": "",
+                    "title": "Introduction to Bit Manipulation [Theory]",
+                    "yt_link": null,
+                    "p1_link": "https://www.codingninjas.com/studio/problems/bit-manipulation_8142533?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf",
+                    "p2_link": null
+                },
+                {
+                    "id": "chckifthithbitisstrnt",
+                    "tags": "",
+                    "title": "Check if the i-th bit is set or not",
+                    "yt_link": null,
+                    "p1_link": "https://www.codingninjas.com/studio/problems/check-whether-k-th-bit-is-set-or-not_5026446?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf",
+                    "p2_link": null
+                },
+                {
+                    "id": "chckifnmbrisddrnt",
+                    "tags": "",
+                    "title": "Check if a number is odd or not",
+                    "yt_link": null,
+                    "p1_link": "https://www.codingninjas.com/codestudio/problems/odd-even_7993579?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf",
+                    "p2_link": null
+                },
+                {
+                    "id": "chckifnmbrispwrf2rnt",
+                    "tags": "",
+                    "title": "Check if a number is power of 2 or not",
+                    "yt_link": null,
+                    "p1_link": "https://www.codingninjas.com/studio/problems/power-of-two_893061?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf",
+                    "p2_link": "https://leetcode.com/problems/power-of-two/"
+                },
+                {
+                    "id": "cntthnmbrfstbits",
+                    "tags": "",
+                    "title": "Count the number of set bits",
+                    "yt_link": null,
+                    "p1_link": "https://www.codingninjas.com/studio/problems/count-total-set-bits_784?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf",
+                    "p2_link": null
+                }
+            ]
+        },
+        {
+            "sl_no": 5,
+            "title": "Stack and Queues [Learning, Pre-In-Post-fix, Monotonic Stack, Implementation]",
+            "ques": [
+                {
+                    "id": "implmntstcksingrrys",
+                    "tags": "Samsung,Netflix,Adobe,Google,Oracle,Tekion-corp,CRED,Meesho,Swiggy,Dream11,InMobi,Oyo,PayTM",
+                    "title": "Implement Stack using Arrays",
+                    "yt_link": "https://www.youtube.com/watch?v=GYptUgnIM_I&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=68",
+                    "p1_link": "https://www.codingninjas.com/studio/problems/stack-implementation-using-array_3210209?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf",
+                    "p2_link": null
+                },
+                {
+                    "id": "implmntqsingrrys",
+                    "tags": "Adobe,Bloomberg,Samsung,Google,Flipkart,Netflix,CRED,Meesho,Swiggy,Dream11,InMobi,Oyo,PayTM,Byju's",
+                    "title": "Implement Queue using Arrays",
+                    "yt_link": "https://www.youtube.com/watch?v=M6GnoUDpqEE&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=72",
+                    "p1_link": "https://www.codingninjas.com/codestudio/problems/implement-queue-using-arrays_8390825?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf",
+                    "p2_link": null
+                },
+                {
+                    "id": "implmntstcksingq",
+                    "tags": "",
+                    "title": "Implement Stack using Queue",
+                    "yt_link": "https://www.youtube.com/watch?v=jDZQKzEtbYQ&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=74",
+                    "p1_link": "https://www.codingninjas.com/studio/problems/stack-using-queue_795152?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf",
+                    "p2_link": "https://leetcode.com/problems/implement-stack-using-queues/"
+                },
+                {
+                    "id": "implmntqsingstck",
+                    "tags": "",
+                    "title": "Implement Queue using Stack",
+                    "yt_link": "https://www.youtube.com/watch?v=3Et9MrMc02A&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=75",
+                    "p1_link": "https://www.codingninjas.com/studio/problems/day-25-:-queue-using-stack_799482?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf",
+                    "p2_link": "https://leetcode.com/problems/implement-queue-using-stacks/"
+                },
+                {
+                    "id": "implmntstcksinglinkdlist",
+                    "tags": "",
+                    "title": "Implement stack using Linkedlist",
+                    "yt_link": null,
+                    "p1_link": "https://www.codingninjas.com/studio/problems/implement-stack-with-linked-list_1279905?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf",
+                    "p2_link": null
+                }
+            ]
+        }
+    ]
+}
