@@ -92,14 +92,13 @@
 
     <div>
       <p id="search">Enter keyword to search: </p>
-      <input type="text" id="search-input" placeholder="Search questions..." onkeyup="searchQuestions()">
+      <input type="text" id="search-input" placeholder="Search questions...">
     </div>
 
     <p class="progress">Progress Bar</p>
     <div id="progress-container">
       <div id="progress-bar"></div>
     </div>
-
 
     <div id="content">
       <!-- Content will be dynamically loaded here -->
@@ -156,7 +155,6 @@
             contentHTML += '</div>';
             contentContainer.innerHTML = contentHTML;
 
-
             const topicSelect = document.getElementById('topic-select');
             topicSelect.addEventListener('change', function () {
               const selectedTopic = this.value;
@@ -208,14 +206,27 @@
                 updateProgressBar();
               });
 
-
               const questionDiv = checkbox.parentElement;
               if (checkbox.checked) {
                 questionDiv.style.backgroundColor = 'green';
               }
 
+
+              const searchInput = document.getElementById('search-input');
+              searchInput.addEventListener('input', function () {
+                const searchQuery = this.value.trim().toLowerCase();
+
+                // Iterate through questions to filter based on search query
+                const allQuestions = document.querySelectorAll('.question');
+                allQuestions.forEach(question => {
+                  const questionText = question.textContent.toLowerCase();
+                  const isVisible = questionText.includes(searchQuery);
+                  question.style.display = isVisible ? 'block' : 'none';
+                });
+              });
             });
             updateProgressBar();
+
           })
           .catch(error => console.error('Error fetching data:', error));
       });
