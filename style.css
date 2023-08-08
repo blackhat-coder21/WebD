@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,8 +8,8 @@
     font-family: "Poppins", sans-serif;
 }
 
-header{
-    position: relative; 
+header {
+    position: relative;
     top: 0;
     left: 0;
     width: 1005;
@@ -17,10 +17,17 @@ header{
 }
 
 
-body{
+body {
     background-color: #323946;
 }
-.intro{
+
+/* Dark mode styles */
+/* body.dark-mode {
+    background-color: #333;
+    color: #fff;
+} */
+
+.intro {
     position: fixed;
     z-index: 1;
     left: 0;
@@ -31,7 +38,7 @@ body{
     transition: 2s;
 }
 
-.logo-header{
+.logo-header {
     position: absolute;
     top: 40%;
     left: 50%;
@@ -39,7 +46,7 @@ body{
     color: white;
 }
 
-.logo{
+.logo {
     position: relative;
     display: inline-block;
     font-size: 4rem;
@@ -47,13 +54,13 @@ body{
     opacity: 0;
 }
 
-.logo.active{
+.logo.active {
     bottom: 0;
     opacity: 1;
     transition: ease-in-out 0.5s;
 }
 
-.logo.fade{
+.logo.fade {
     bottom: 150px;
     opacity: 0;
     transition: ease-in-out 0.5s;
@@ -74,18 +81,18 @@ body{
 }
 
 
-.logo1{
+.logo1 {
     font-size: 1.5rem;
     color: white;
     font-weight: 600;
     cursor: default;
-    flex: 1; 
+    flex: 1;
     margin-left: 5px;
     background: black;
     text-decoration: none;
 }
 
-.navbar{
+.navbar {
     position: sticky;
     top: 0;
     overflow: hidden;
@@ -105,36 +112,37 @@ body{
     color: green;
 }
 
-i{
+i {
     color: white;
     cursor: pointer;
 }
 
-#int{
+#int {
     color: green;
     transition: .6s;
     cursor: pointer;
 }
 
-header .search-box{
+header .search-box {
     flex: 1;
     position: relative;
 }
 
-.search-box input{
+.search-box input {
     width: 100%;
     height: 40px;
     border: none;
     outline: none;
     background: #f2f2f2;
     border-radius: 30px;
-    color: grey;
-    font-size: 14px;
+    color: black;
+    font-size: 1rem;
     padding-left: 16px;
     text-align: center;
+    font-weight: 500;
 }
 
-.search-box button{
+.search-box button {
     width: 40px;
     height: 40px;
     border: none;
@@ -155,11 +163,11 @@ header .search-box{
     background: #1f242d;
 }
 
-.services{
+.services {
     background: #1f242d;
 }
 
-.home-content h3{
+.home-content h3 {
     color: white;
     font-size: 2rem;
     font-weight: 700;
@@ -167,7 +175,7 @@ header .search-box{
     margin-left: 5rem;
 }
 
-.home-content h2{
+.home-content h2 {
     margin-left: 5rem;
     font-size: 1.6rem;
     font-weight: 700;
@@ -177,28 +185,30 @@ header .search-box{
     margin-bottom: 2rem;
 }
 
-span{
+span {
     color: #0ef;
 }
 
-.home-img img{
+.home-img img {
     width: 30vw;
     animation: floatImage 4s ease-in-out infinite;
 }
 
-@keyframes floatImage{
-    0%{
+@keyframes floatImage {
+    0% {
         transform: translateY(0);
     }
-    50%{
+
+    50% {
         transform: translateY(-2.8rem);
     }
-    1000%{
+
+    1000% {
         transform: translateY(0);
     }
 }
 
-.home-content h1{
+.home-content h1 {
     font-size: 3.6rem;
     margin-left: 5rem;
     font-weight: 800;
@@ -209,18 +219,18 @@ span{
 }
 
 
-.home-content p{
+.home-content p {
     color: white;
     font-size: 1.05rem;
     margin-left: 5rem;
 }
 
 
-.footer-text span{
+.footer-text span {
     color: rgb(224, 240, 85);
 }
 
-.footer{
+.footer {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -228,12 +238,12 @@ span{
     background: black;
 }
 
-.footer-text p{
+.footer-text p {
     color: white;
     font-size: 1rem;
 }
 
-.footer-iconTop a{
+.footer-iconTop a {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -244,17 +254,18 @@ span{
     transition: .5s ease;
 }
 
-.footer-iconTop a:hover{
+.footer-iconTop a:hover {
     box-shadow: 0 0 3rem #0ef;
 }
-.footer-iconTop a i{
+
+.footer-iconTop a i {
     font-size: 1.7rem;
     color: black;
 }
 
 .social a {
     display: inline-flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     width: 1rem;
     height: 1rem;
@@ -267,18 +278,18 @@ span{
     transition: .5s ease;
 }
 
-.social a:hover{
+.social a:hover {
     box-shadow: 0 0 2rem #0ef;
 }
 
-.heading{
+.heading {
     color: white;
     text-align: center;
     font-weight: 800;
     font-size: 2.8rem;
 }
 
-.about-img img{
+.about-img img {
     width: 30vw;
 }
 
@@ -290,7 +301,7 @@ span{
 }
 
 
-.about-content h2{
+.about-content h2 {
     text-align: left;
     color: white;
     font-size: 3.2rem;
@@ -300,23 +311,23 @@ span{
     margin-bottom: 5rem;
 }
 
-.about-content h3{
+.about-content h3 {
     font-size: 1.6rem;
     color: white;
 }
 
-.about-content h1{
+.about-content h1 {
     font-size: 2.9rem;
     color: yellow;
 }
 
-.about-content p{
+.about-content p {
     font-size: 1.05rem;
     color: white;
     margin: 2rem 0 3rem;
 }
 
-.btn{
+.btn {
     display: inline-block;
     padding: 0.5rem 2.1rem;
     background: #0ef;
@@ -329,23 +340,25 @@ span{
     text-decoration: none;
 }
 
-.btn:hover{
+.btn:hover {
     box-shadow: 0 0 1rem #0ef;
 }
 
-.about-img img{
+.about-img img {
     width: 30vw;
     animation: floatImage 4s ease-in-out infinite;
 }
 
-@keyframes floatImage{
-    0%{
+@keyframes floatImage {
+    0% {
         transform: translateY(0);
     }
-    50%{
+
+    50% {
         transform: translateY(-2.8rem);
     }
-    1000%{
+
+    1000% {
         transform: translateY(0);
     }
 }
@@ -354,23 +367,23 @@ span{
     color: rgb(224, 240, 85);
 } */
 
-.contact{
+.contact {
     background: #323946;
 }
 
-.contact h2{
+.contact h2 {
     margin-bottom: 5rem;
     font-size: 2.8rem;
 }
 
-.contact form{
+.contact form {
     max-width: 45rem;
     margin: 1rem auto;
     text-align: center;
     margin-bottom: 3rem;
 }
 
-.contact form .input-box{
+.contact form .input-box {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -386,24 +399,26 @@ span{
     border-radius: .8rem;
     margin: .8rem 0;
     border-color: #1f242d;
+    border: none;
+    outline: none;
 }
 
-.contact form .input-box input{
+.contact form .input-box input {
     width: 49%;
 }
 
-.contact form textarea{
+.contact form textarea {
     resize: none;
     border-color: #323946;
 }
 
-.contact form .btn{
+.contact form .btn {
     margin-top: 2rem;
     cursor: pointer;
     border-color: #0ef;
 }
 
-.question{
+.question {
     color: #FBA100;
     font-size: 1rem;
     font-weight: 500;
@@ -411,26 +426,29 @@ span{
     margin-left: 5rem;
 }
 
-.yt_link{
+.yt_link {
     color: white;
     text-decoration: none;
 }
 
-.yt_link:hover, .yt_link:visited{
+.yt_link:hover,
+.yt_link:visited {
     text-decoration: underline;
     color: yellow;
 }
 
-.q_link{
+.q_link {
     color: white;
     text-decoration: none;
 }
 
-.q_link:hover, .q_link:visited{
+.q_link:hover,
+.q_link:visited {
     text-decoration: underline;
     color: yellow;
 }
-.t_head{
+
+.t_head {
     margin-top: 5rem;
     margin-left: 5rem;
     margin-bottom: 4rem;
@@ -438,17 +456,17 @@ span{
     font-size: 2rem;
 }
 
-.q_title{
+.q_title {
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
-.bg-color-checkbox{
+.bg-color-checkbox {
     margin-top: 2rem;
     margin-bottom: 3rem;
 }
 
-.check_text{
+.check_text {
     color: #0ef;
 }
 
@@ -468,7 +486,7 @@ span{
     margin-bottom: 0.5rem;
 }
 
-.topic{
+.topic {
     /* margin-top: 10rem; */
     color: green;
     font-weight: 600;
@@ -476,7 +494,7 @@ span{
     margin-left: 5rem;
 }
 
-#topic-select{
+#topic-select {
     margin-top: 5rem;
     color: black;
     font-weight: 500;
@@ -486,7 +504,7 @@ span{
     height: 2rem;
 }
 
-#toggle-questions-btn{
+#toggle-questions-btn {
     background: #0ef;
     font-size: 1rem;
     margin-left: 1.5rem;
@@ -498,6 +516,60 @@ span{
     border-color: #0ef;
 }
 
-#toggle-questions-btn:hover{
+#toggle-questions-btn:hover {
     box-shadow: 0 0 1rem #0ef;
 }
+
+#search-input{
+    margin-left: 1rem;
+    margin-top: 7rem;
+    height: 2.5rem;
+    border-radius: 3rem;
+    width: 15rem;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 3rem;
+    border: none;
+    outline: none;
+    background: #f2f2f2;
+    color: black;
+}
+
+
+#search{
+    color: green;
+    display: inline;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-left: 18rem;
+}
+
+
+.progress{
+    margin-top: 3.5rem;
+    margin-left: 4rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #0ef;
+}
+#progress-container {
+    width: 90%;
+    height: 25px;
+    background-color: lightgray;
+    margin-top: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-left: 3.3rem;
+  }
+  
+#progress-bar {
+    height: 100%;
+    background-color: green;
+    width: 0;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    border-radius: 10px;
+}
+  

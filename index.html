@@ -19,7 +19,7 @@
 
     <div class="search-box">
       <form action="">
-        <input type="text" name="search" id="srch" placeholder="Search">
+        <input type="text" name="search" id="srch" placeholder="Search" one>
         <button type="submit">
           <i class="fa fa-search"></i>
         </button>
@@ -33,6 +33,9 @@
       <a href="https://blackhat-coder21.github.io/portfolio/#home" target="_blank">Portfolio</a>
       <a href="#contact">Contact</a>
     </nav>
+    <!-- <div class="dark-mode-toggle" onclick="toggleDarkMode()">
+      <div class="toggle-btn"></div>
+    </div> -->
   </header>
 
 
@@ -87,9 +90,16 @@
     <h2 class="heading">Practise <span>Problems</span></h2>
 
 
-    <div class="progress-bar-container">
-      <div class="progress-bar"></div>
+    <div>
+      <p id="search">Enter keyword to search: </p>
+      <input type="text" id="search-input" placeholder="Search questions..." onkeyup="searchQuestions()">
     </div>
+
+    <p class="progress">Progress Bar</p>
+    <div id="progress-container">
+      <div id="progress-bar"></div>
+    </div>
+
 
     <div id="content">
       <!-- Content will be dynamically loaded here -->
@@ -103,14 +113,14 @@
           .then(data => {
             const contentContainer = document.getElementById('content');
             let contentHTML = '';
-  
+
             contentHTML += '<label class="topic" for="topic-select">Select a Topic: &nbsp</label>';
             contentHTML += '<select id="topic-select">';
-  
+
             data.data.forEach(item => {
               contentHTML += `<option value="${item.title}">${item.title}</option>`;
             });
-  
+
             contentHTML += '</select>';
             contentHTML += `<button id="toggle-questions-btn">Hide Questions</button>`;
             contentHTML += '<div id="questions-container">';
@@ -119,10 +129,10 @@
               contentHTML += `<h2 class="t_head">&#9733 &nbsp${item.title}</h2>`;
               item.ques.forEach((ques, index) => {
                 contentHTML += `<div class="question">`;
-                
+
                 contentHTML += `<span class="dot">${index + 1}</span>`;
                 contentHTML += `<h3 class="q_title">${ques.title}</h3>`;
-  
+
                 if (ques.yt_link) {
                   contentHTML += '&nbsp<i class="fa fa-youtube-play" style="font-size:24px;color:red"></i> &nbsp' + `<a class="yt_link" href="${ques.yt_link}" target="_blank">Watch on YouTube</a><br>`;
                 }
@@ -132,8 +142,8 @@
                 if (ques.p2_link) {
                   contentHTML += '&nbsp<i class="fa fa-book" style="font-size:24px;color:white"></i> &nbsp' + `<a class="q_link" href="${ques.p2_link}" target="_blank">Problem 2</a><br>`;
                 }
-  
-                
+
+
                 const savedValue = localStorage.getItem(`checkbox_${item.title}_${index}`);
                 const isChecked = savedValue === 'true';
                 contentHTML += ` &nbsp<input type="checkbox" id="checkbox${item.title}${index}" class="bg-color-checkbox" data-topic="${item.title}" data-index="${index}" ${isChecked ? 'checked' : ''}>`;
@@ -142,11 +152,11 @@
               });
               contentHTML += `</div>`;
             });
-  
+
             contentHTML += '</div>';
             contentContainer.innerHTML = contentHTML;
-  
-            
+
+
             const topicSelect = document.getElementById('topic-select');
             topicSelect.addEventListener('change', function () {
               const selectedTopic = this.value;
@@ -160,45 +170,58 @@
                 }
               });
             });
-  
-            
+
             const toggleButton = document.getElementById('toggle-questions-btn');
             toggleButton.addEventListener('click', function () {
               const containers = document.querySelectorAll('.question-container:not(.hidden) .question');
               containers.forEach(question => {
                 question.classList.toggle('hidden');
               });
-  
-            
+
+
               const buttonText = this.innerText;
               this.innerText = buttonText === 'Hide Questions' ? 'Show Questions' : 'Hide Questions';
             });
-  
-            
+
+            const updateProgressBar = () => {
+              const totalQuestions = document.querySelectorAll('.bg-color-checkbox').length;
+              const completedQuestions = document.querySelectorAll('.bg-color-checkbox:checked').length;
+              const completionRate = (completedQuestions / totalQuestions) * 100;
+
+              const progressBar = document.getElementById('progress-bar');
+              progressBar.style.width = `${completionRate}%`;
+              progressBar.innerText = `${completionRate.toFixed(2)}% Complete`;
+            };
+
             const checkboxes = document.querySelectorAll('.bg-color-checkbox');
             checkboxes.forEach((checkbox) => {
               checkbox.addEventListener('change', function () {
                 const questionDiv = this.parentElement;
                 questionDiv.style.backgroundColor = this.checked ? 'green' : 'initial';
-  
-                
+
+
                 const topic = this.getAttribute('data-topic');
                 const checkboxIndex = this.getAttribute('data-index');
                 const isChecked = this.checked;
                 localStorage.setItem(`checkbox_${topic}_${checkboxIndex}`, isChecked);
+
+                updateProgressBar();
               });
-  
+
 
               const questionDiv = checkbox.parentElement;
               if (checkbox.checked) {
                 questionDiv.style.backgroundColor = 'green';
               }
+
             });
+            updateProgressBar();
           })
           .catch(error => console.error('Error fetching data:', error));
       });
+
     </script>
-  
+
   </section>
 
 
