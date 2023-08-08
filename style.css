@@ -555,10 +555,10 @@ span {
 }
 #progress-container {
     width: 90%;
-    height: 25px;
+    height: 30px;
     background-color: lightgray;
     margin-top: 10px;
-    border-radius: 10px;
+    border-radius: 15px;
     overflow: hidden;
     margin-left: 3.3rem;
   }
@@ -568,7 +568,6 @@ span {
     background-color: green;
     width: 0;
     text-align: center;
-    line-height: 20px;
     color: white;
     border-radius: 10px;
 }

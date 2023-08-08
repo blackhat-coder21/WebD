@@ -72,17 +72,3 @@ checkboxes.forEach(checkbox => {
     questionDiv.style.backgroundColor = this.checked ? 'green' : 'initial';
   });
 });
-
-
-// function toggleDarkMode() {
-//   const body = document.body;
-//   body.classList.toggle('dark-mode');
-// }
-
-// document.addEventListener('DOMContentLoaded', function () {
-//   // Dark mode toggle functionality
-//   const darkModeToggle = document.getElementById('dark-mode-toggle');
-//   darkModeToggle.addEventListener('click', function () {
-//     document.body.classList.toggle('dark-mode');
-//   });
-// });

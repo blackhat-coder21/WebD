@@ -33,9 +33,7 @@
       <a href="https://blackhat-coder21.github.io/portfolio/#home" target="_blank">Portfolio</a>
       <a href="#contact">Contact</a>
     </nav>
-    <!-- <div class="dark-mode-toggle" onclick="toggleDarkMode()">
-      <div class="toggle-btn"></div>
-    </div> -->
+    
   </header>
 
 
@@ -110,6 +108,8 @@
         fetch('data.json')
           .then(response => response.json())
           .then(data => {
+
+            
             const contentContainer = document.getElementById('content');
             let contentHTML = '';
 
